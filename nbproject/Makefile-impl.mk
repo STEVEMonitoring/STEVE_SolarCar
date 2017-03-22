@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SolarCarMonitoringSystem.X
+PROJECTNAME=Solar Car
 
 # Active Configuration
 DEFAULTCONF=default
