@@ -49,6 +49,7 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include "tmr1.h"
 #include "i2c1.h"
 #include "traps.h"
 #include "interrupt_manager.h"

@@ -129,6 +129,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     INTERRUPT_Initialize();
     I2C1_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     CORCON_ModeOperatingSet(CORCON_MODE_PORVALUES);
 }
