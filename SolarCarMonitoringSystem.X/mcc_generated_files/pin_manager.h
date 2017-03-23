@@ -1,24 +1,26 @@
 /**
-  Generated Pin Manager File
+  System Interrupts Generated Driver File
 
-  Company:
+  @Company:
     Microchip Technology Inc.
 
-  File Name:
-    pin_manager.c
+  @File Name:
+    pin_manager.h
 
-  Summary:
-    This is the Pin Manager file generated using MPLAB(c) Code Configurator
+  @Summary:
+    This is the generated manager file for the MPLAB(c) Code Configurator device.  This manager
+    configures the pins direction, initial state, analog setting.
+    The peripheral pin select, PPS, configuration is also handled by this manager.
 
-  Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+  @Description:
+    This source file provides implementations for MPLAB(c) Code Configurator interrupts.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15
-        Device            :  PIC18F26K80
-        Driver Version    :  1.02
+        Device            :  dsPIC33EV128GM102
+        Version           :  1.02
     The generated drivers are tested against the following:
-        Compiler          :  XC8 1.35
-        MPLAB             :  MPLAB X 3.40
+        Compiler          :  XC16 1.26
+        MPLAB             :  MPLAB X 3.45
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
 
@@ -43,50 +45,48 @@
 
 */
 
+#ifndef _PIN_MANAGER_H
+#define _PIN_MANAGER_H
+/**
+    Section: Includes
+*/
 #include <xc.h>
-#include "pin_manager.h"
-#include "stdbool.h"
-
-
-void PIN_MANAGER_Initialize(void)
-{
-    /**
-    LATx registers
-    */   
-    LATA = 0x00;    
-    LATB = 0x00;    
-    LATC = 0x00;    
-
-    /**
-    TRISx registers
-    */    
-    TRISA = 0xEF;
-    TRISB = 0xFB;
-    TRISC = 0xFF;
-
-    /**
-    ANSELx registers
-    */   
-    ANCON0 = 0x1F;
-    ANCON1 = 0x07;
-
-    /**
-    WPUx registers
-    */ 
-    WPUB = 0xFF;
-
-    
-
-
-   
-    
-}       
-
-void PIN_MANAGER_IOC(void)
-{   
-
-}
+/**
+    Section: Device Pin Macros
+*/
 
 /**
- End of File
+    Section: Function Prototypes
 */
+/**
+  @Summary
+    Configures the pin settings of the dsPIC33EV128GM102
+    The peripheral pin select, PPS, configuration is also handled by this manager.
+
+  @Description
+    This is the generated manager file for the MPLAB(c) Code Configurator device.  This manager
+    configures the pins direction, initial state, analog setting.
+    The peripheral pin select, PPS, configuration is also handled by this manager.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    void SYSTEM_Initialize(void)
+    {
+        // Other initializers are called from this function
+        PIN_MANAGER_Initialize();
+    }
+    </code>
+
+*/
+void PIN_MANAGER_Initialize(void);
+
+#endif

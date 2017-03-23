@@ -1,26 +1,26 @@
 /**
-  @Generated MPLAB(c) Code Configurator Header File
+  System Interrupts Generated Driver File 
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    interrupt_manager.h
 
   @Summary:
-    This is the mcc.h file generated using MPLAB(c) Code Configurator
+    This is the generated driver implementation file for setting up the
+    interrupts using MPLAB(c) Code Configurator
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information :
-        Product Revision  :  MPLAB(c) Code Configurator - 4.15
-        Device            :  PIC18F26K80
-        Version           :  1.02
+    This source file provides implementations for MPLAB(c) Code Configurator interrupts.
+    Generation Information : 
+        Product Revision  :  MPLAB(c) Code Configurator - pic24-dspic-pic32mm : v1.25
+        Device            :  dsPIC33EV128GM102
+        Version           :  1.01
     The generated drivers are tested against the following:
-        Compiler          :  XC8 1.35
-        MPLAB             :  MPLAB X 3.40
+        Compiler          :  XC16 1.26
+        MPLAB             :  MPLAB X 3.45
 */
-
 /*
     (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -43,46 +43,21 @@
     TERMS.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "ecan.h"
-
-#define _XTAL_FREQ  16000000
-
-
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-
-
-#endif	/* MCC_H */
-/**
- End of File
+    Section: Includes
 */
+#include <xc.h>
+
+/**
+    void INTERRUPT_Initialize (void)
+*/
+void INTERRUPT_Initialize (void)
+{
+    //    MICI: I2C1 Master Events
+    //    Priority: 1
+        IPC4bits.MI2C1IP = 1;
+    //    SICI: I2C1 Slave Events
+    //    Priority: 1
+        IPC4bits.SI2C1IP = 1;
+}
+
