@@ -4,6 +4,8 @@
  *  Created on: 29 Mar 2017
  *      Author: fredr_000
  */
+#include "stdint.h"
+#include "time.h"
 
 uint32_t globalTimer = 0;
 
