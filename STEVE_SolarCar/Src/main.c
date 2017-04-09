@@ -72,7 +72,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	uint32_t currentTime = time();
+	//uint32_t currentTime = time();
 
   /* USER CODE END 1 */
 
