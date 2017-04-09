@@ -60,18 +60,22 @@ struct MotorFrame0
 	u_int16_t motorCurrentPeakAvrage; //1/LSB
 	u_int8_t fetTemp; //5°C/LSB
 	u_int16_t motorRotationgSpeed; //1rpm/LSB
-	u_int
-
+	u_int16_t PWMduty; //0,5%/LSB
+	u_int8_t leadAngle; //0,5°/LSB
 };
 
 struct MotorFrame1
 {
-
+	u_int8_t status; // Power mode, motor control mode, drive action status, regneration status.
+	u_int16_t acceleratorPos; //0,5%/LSB
+	u_int16_t regnerationVrPos; //0,5%/LSB
+	u_int8_t digitSwPos;
+	u_int16_t outputTargetVal; //0,5%/LSB
 };
 
 struct MotorFrame2
 {
-
+	//todo
 };
 
 #endif /* DATASTRUCTS_H_ */
