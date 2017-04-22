@@ -36,6 +36,8 @@
 
 /* USER CODE BEGIN Includes */
 #include "buttonHandler.h"
+#include "CANdataConv.h"
+#include "Tests.h"
 
 /* USER CODE END Includes */
 
@@ -95,6 +97,12 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim6);
 
 
+  /* Tests Start*/
+
+  char testResult = testCANdataConv();
+
+  /* Tests End */
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,6 +114,7 @@ int main(void)
   /* USER CODE BEGIN 3 */
 
 	  buttonEventHandler();
+
   }
   /* USER CODE END 3 */
 

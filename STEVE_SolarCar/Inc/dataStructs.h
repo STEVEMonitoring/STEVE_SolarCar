@@ -8,14 +8,16 @@
 #ifndef DATASTRUCTS_H_
 #define DATASTRUCTS_H_
 
+#include "stm32l4xx_hal.h"
+
+
+//Something is wrong here
+/*
 struct CANidSend
 {
 	u_int16_t MPPT = 0x719;
 	u_int16_t BMS = 0x180;
 	u_int64_t motorController = 0x08F91540;
-
-
-
 };
 
 struct CANidReceive
@@ -23,12 +25,12 @@ struct CANidReceive
 	u_int16_t MPPT = 0x779;
 	u_int16_t BMSPDO1 = 0x200;
 	u_int16_t BMSPDO2 = 0x300;
-	u_int16_t BMSPDO3 =	0x400
+	u_int16_t BMSPDO3 =	0x400;
 	u_int64_t motorFrame0 = 0x08850245;
 	u_int64_t motorFrame1 = 0x08950245;
-	u_int64_t motorFrame2 = 0x08A50245
+	u_int64_t motorFrame2 = 0x08A50245;
 };
-
+*/
 
 struct PDO1
 {
@@ -37,14 +39,14 @@ struct PDO1
 	u_int8_t maxVolt; //0,01V/bit
 	u_int8_t maxVoltID;
 	u_int16_t volt; //0,01V/bit
-	int16_t cuttent; // 0,1A/bit
+	int16_t current; // 0,1A/bit
 };
 
 struct PDO2
 {
 	u_int16_t SOC; //0,1%/bit
-	int16_t minTemp; //0,1%/bit
-	int16_t maxTemp; //0,1%/bit
+	u_int16_t minTemp; //0,1%/bit
+	u_int16_t maxTemp; //0,1%/bit
 	u_int8_t minTempID;
 	u_int8_t maxTempID;
 };
@@ -67,9 +69,9 @@ struct MPPT
 
 struct Motor
 {
-	struct MotorFrame0 frame0;
-	struct MotorFrame0 frame1;
-	struct MotorFrame0 frame2;
+	struct MotorFrame0 *frame0;
+	struct MotorFrame0 *frame1;
+	struct MotorFrame0 *frame2;
 };
 
 struct MotorFrame0
