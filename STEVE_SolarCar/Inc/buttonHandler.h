@@ -8,6 +8,9 @@
 #ifndef BUTTONHANDLER_H_
 #define BUTTONHANDLER_H_
 
+#include "stm32l4xx_hal.h"
+#include "stdint.h"
+
 void buttonTrigger();
 void buttonEventHandler();
 

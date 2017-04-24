@@ -8,6 +8,10 @@
 #ifndef TESTS_H_
 #define TESTS_H_
 
+
+#include "CANdataConv.h"
+
+
 char testCANdataConv();
 
 #endif /* TESTS_H_ */

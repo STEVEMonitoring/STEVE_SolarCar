@@ -5,12 +5,15 @@
  *      Author: fredr_000
  */
 
-#include "CANdataConv.h"
-#include "dataStructs.h"
+
+#include "Tests.h"
 
 
 char testCANdataConv()
 {
+
+
+
 	u_int64_t content = 0x0123456789ABCDEF;
 
 	char tests = 0x7F;
@@ -19,9 +22,9 @@ char testCANdataConv()
 	struct PDO2 pdo2;
 	//struct PDO3 pdo3;
 
-
 	// PDO1 test start
 	setPDO1(content, &pdo1);
+
 
 	if(pdo1.minVolt 	!= 0xEF ||
 	   pdo1.minVoltID 	!= 0xCD ||
@@ -50,3 +53,4 @@ char testCANdataConv()
 
 	return tests;
 }
+

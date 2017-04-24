@@ -4,10 +4,12 @@
  *  Created on: 29 Mar 2017
  *      Author: fredr_000
  */
-#include "stdint.h"
+
 #include "time.h"
 
-uint32_t globalTimer = 0;
+
+
+u_int32_t globalTimer = 0;
 
 /**
  * @brief Increment the timer variable by 1.
@@ -20,7 +22,7 @@ void incrementTime()
 /**
  * @brief Return time from startup in units of 10ms.
  */
-uint32_t time()
+u_int32_t time()
 {
 	return globalTimer;
 }

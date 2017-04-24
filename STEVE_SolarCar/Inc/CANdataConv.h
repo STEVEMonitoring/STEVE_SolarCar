@@ -8,7 +8,8 @@
 #ifndef CANDATACONV_H_
 #define CANDATACONV_H_
 
-#include "stm32l4xx_hal.h"
+#include "dataStructs.h"
+
 
 void setPDO1();
 

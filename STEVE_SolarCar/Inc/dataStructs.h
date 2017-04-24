@@ -10,27 +10,40 @@
 
 #include "stm32l4xx_hal.h"
 
-
-//Something is wrong here
 /*
+ * Copy and paste the following consts in the file where you need the id:s
+ * When creating the structs do as follows
+ *
+ * struct CANidSend SendIds = CANidSend_defaults;
+ * struct CANidReceive ReceiveIds = CANidReceive_defaults;
+ *
+ * this will init the structs to their correct id values for you
+ *
+const struct CANidReceive CANidReceive_defaults =  {0x779, 0x200, 0x300, 0x400, 0x08850245, 0x08950245, 0x08A50245};
+const struct CANidSend CANidSend_defaults = {0x719, 0x180, 0x08F91540};
+*/
+
+
 struct CANidSend
 {
-	u_int16_t MPPT = 0x719;
-	u_int16_t BMS = 0x180;
-	u_int64_t motorController = 0x08F91540;
+	u_int16_t MPPT;
+	u_int16_t BMS;
+	u_int64_t motorControler;
 };
+
+
 
 struct CANidReceive
 {
-	u_int16_t MPPT = 0x779;
-	u_int16_t BMSPDO1 = 0x200;
-	u_int16_t BMSPDO2 = 0x300;
-	u_int16_t BMSPDO3 =	0x400;
-	u_int64_t motorFrame0 = 0x08850245;
-	u_int64_t motorFrame1 = 0x08950245;
-	u_int64_t motorFrame2 = 0x08A50245;
+	u_int16_t MPPT;
+	u_int16_t BMSPDO1;
+	u_int16_t BMSPDO2;
+	u_int16_t BMSPDO3;
+	u_int64_t motorFrame0;
+	u_int64_t motorFrame1;
+	u_int64_t motorFrame2;
 };
-*/
+
 
 struct PDO1
 {
@@ -127,5 +140,10 @@ struct MotorFrame2
 	 */
 	u_int64_t flags;
 };
+
+
+
+
+
 
 #endif /* DATASTRUCTS_H_ */
